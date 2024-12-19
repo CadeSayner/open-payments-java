@@ -4,65 +4,65 @@ public class OutgoingPayment {
     /**
      * The URL identifying the outgoing payment.
      */
-    String id;
+    public String id;
 
     /**
      * The URL of the wallet address from which this payment is sent.
      */
-    String walletAddress;
+    public String walletAddress;
 
     /**
      * The URL of the quote defining this payment’s amounts.
      */
-    String quoteId;
+    public String quoteId;
 
     /**
      * Describes whether the payment failed to send its full amount.
      */
-    boolean failed;
+    public boolean failed;
 
     /**
      * The URL of the incoming payment that is being paid.
      */
-    String receiver;
+    public String receiver;
 
     /**
      * The total amount that should be received by the receiver when this outgoing payment has been paid.
      */
-    Amount receiveAmount;
+    public Amount receiveAmount;
 
     /**
      * The total amount that should be deducted from the sender’s account when this outgoing payment has been paid.
      */
-    Amount debitAmount;
+    public Amount debitAmount;
 
     /**
      * The total amount that has been sent under this outgoing payment.
      */
-    Amount sentAmount;
+    public Amount sentAmount;
 
     /**
      * The total amount successfully deducted from the sender’s account using the current outgoing payment grant.
      */
-    Amount grantSentDebitAmount;
+    public Amount grantSentDebitAmount;
 
     /**
      * The total amount successfully received (by all receivers) using the current outgoing payment grant.
      */
-    Amount grantSpentReceiveAmount;
+    public Amount grantSpentReceiveAmount;
 
     /**
      * Additional metadata associated with the outgoing payment. (Optional)
      */
-    Object metaData;
+    public Object metaData;
 
     /**
      * The date and time when the outgoing payment was created.
      */
-    String createdAt;
+    public String createdAt;
 
     /**
      * The date and time when the outgoing payment was updated.
      */
-    String updatedAt; 
+    public String updatedAt; 
 }
