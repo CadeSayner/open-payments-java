@@ -7,57 +7,57 @@ public class IncomingPayment{
     /**
      * The URL identifying the incoming payment.
      */
-    String id;
+    public String id;
 
     /**
      * URL of a wallet address hosted by a Rafiki instance.
      */
-    String walletAddress;
+    public String walletAddress;
 
     /**
      * Describes whether the incoming payment has completed receiving fund.
      */
-    boolean completed;
+    public boolean completed;
 
     /**
      * The maximum amount that should be paid into the wallet address under this incoming payment.
      */
-    Amount incomingAmount;
+    public Amount incomingAmount;
 
     /**
      * The total amount that has been paid into the wallet address under this incoming payment.
      */
-    Amount receivedAmount;
+    public Amount receivedAmount;
 
     /**
      * The date and time when payments under this incoming payment will no longer be accepted.
      */
-    String expiresAt;
+    public String expiresAt;
 
     /**
      * Additional metadata associated with the incoming payment. (Optional)
      */
-    Object metaData;
+    public Object metaData;
 
     /**
      * The date and time when the incoming payment was created.
      */
-    String createdAt;
+    public String createdAt;
 
     /**
      * The date and time when the incoming payment was updated.
      */
-    String updatedAt;
+    public String updatedAt;
 
     /**
      * The list of payment methods supported by this incoming payment.
      */
-    Method[] methods;
+    public Method[] methods;
 
-    private class Method{
-        String type;
-        String ilpAddress;
-        String sharedSecret;
+    public class Method{
+        public String type;
+        public String ilpAddress;
+        public String sharedSecret;
     }
     
     public String toString(){
