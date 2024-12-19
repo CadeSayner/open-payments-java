@@ -363,32 +363,4 @@ public class AuthenticatedClient {
         }
     }
 
-    public static void main(String[] args) throws Exception{
-        AuthenticatedClient client = new AuthenticatedClient("https://ilp.interledger-test.dev/cadesayner", "private.key", "cc8de9e6-1160-4038-ab9d-38c984db39a0");
-        final String receivingAddress = "https://ilp.interledger-test.dev/spca";
-        final String sendingAddress = "https://ilp.interledger-test.dev/kaylasayner";
-        WalletAddress receivingWalletAddress = client.getWalletAddress(receivingAddress);
-        WalletAddress sendingWalletAddress = client.getWalletAddress(sendingAddress);
-
-        Grant incomingPaymentGrant = client.requestIncomingPaymentGrant(receivingWalletAddress);
-        Grant quoteGrant = client.requestQuoteGrant(sendingWalletAddress);
-        Grant outgoingPaymentGrant = client.requestOutgoingPaymentGrant(sendingWalletAddress, "http://localhost:5000", "202");
-        System.out.println(incomingPaymentGrant);
-        // create incoming payment 
-        IncomingPayment incomingPayment = client.createIncomingPayment(receivingWalletAddress,incomingPaymentGrant.access_token.value, 200);
-
-        //TODO: make it so that the create quote takes in an incomingPayment directly
-        Quote quote = client.createQuote(sendingWalletAddress, incomingPayment.id, quoteGrant);
-        System.out.println(outgoingPaymentGrant.interact.redirect);
-        Scanner s = new Scanner(System.in);
-        String x = s.next();
-
-        // Grant continuedGrant = client.continueGrant(outgoingPaymentGrant);
-        // System.out.println(continuedGrant.access_token.value);
-
-        // OutgoingPayment outgoingPayment = client.createOutgoingPayment(sendingWalletAddress, quote, continuedGrant);
-        // if(outgoingPayment.failed == false){
-        //     System.out.println("Payment successful");
-        // }
-    }
 }
